@@ -13,9 +13,9 @@ export class AppComponent {
   textoEventBinding = 'prueba event binding';
   textoTwoWayDataBinding = '';
   listaEstudiantes: any[] = [
-    {nombre: 'Tomas', estado: 'Regular'},
+/*     {nombre: 'Tomas', estado: 'Regular'},
     {nombre: 'Matias', estado: 'Reprobado'},
-    {nombre: 'Juan', estado: 'Ausente'}
+    {nombre: 'Juan', estado: 'Ausente'} */
   ]
 
   constructor(){
@@ -29,5 +29,10 @@ export class AppComponent {
 
   cambiarTexto(): void{
     this.textoEventBinding = 'Este cambio es producido por event binding';
+  }
+
+  mostrar = true;
+  toogle(): void{
+    this.mostrar = !this.mostrar;
   }
 }
