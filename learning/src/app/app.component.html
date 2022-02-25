@@ -7,6 +7,11 @@
     <!--funciona igual asi: placeholder="{{textoPlaceHolder}}"-->
     <input type="text" class="form-control" [placeholder]="textoPlaceHolder" [disabled]="deshabilitado" style="width: 50%;">
     <br>
-    <img [src]="imgSrc" alt="Img" width="100px" height="400px" style="width: 50%;">
+    <!--<img [src]="imgSrc" alt="Img" width="100px" height="400px" style="width: 50%;">-->
   </div>
+</div>
+
+<div class="container mt-3">
+  <h3>{{ textoEventBinding }}</h3>
+  <button class="btn btn-primary" (click)="cambiarTexto()">Press me</button>
 </div>

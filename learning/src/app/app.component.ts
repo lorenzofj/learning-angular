@@ -9,7 +9,8 @@ export class AppComponent {
   nombre = 'Francisco';
   textoPlaceHolder = 'escriba algo aqui...';
   deshabilitado = true;
-  imgSrc = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhorus.com.uy%2Fimg%2Ftechnologies%2Fangular.png&f=1&nofb=1";
+  //imgSrc = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhorus.com.uy%2Fimg%2Ftechnologies%2Fangular.png&f=1&nofb=1";
+  textoEventBinding = "prueba event binding";
 
   constructor(){
     setInterval(() => this.nombre = 'Martín', 3000);
@@ -18,5 +19,9 @@ export class AppComponent {
 
   getSuma(num1:number, num2:number){
     return num1 + num2;
+  }
+
+  cambiarTexto(): void{
+    this.textoEventBinding = 'Este cambio es producido por event binding';
   }
 }
