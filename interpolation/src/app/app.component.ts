@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'interpolation';
+  nombre = 'Francisco';
+
+  constructor(){
+    setInterval(() => this.nombre = 'Martín', 3000);
+  }
+
+  getSuma(num1:number, num2:number){
+    return num1 + num2;
+  }
 }
