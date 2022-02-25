@@ -7,9 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   nombre = 'Francisco';
+  textoPlaceHolder = 'escriba algo aqui...';
+  deshabilitado = true;
+  imgSrc = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhorus.com.uy%2Fimg%2Ftechnologies%2Fangular.png&f=1&nofb=1";
 
   constructor(){
     setInterval(() => this.nombre = 'Martín', 3000);
+    setInterval(() => this.deshabilitado = false, 3000);
   }
 
   getSuma(num1:number, num2:number){

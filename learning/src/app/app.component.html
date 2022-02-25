@@ -1,0 +1,12 @@
+<div class="container mt-4">
+  <div class="row">
+    <h3>Hola mi nombre es {{ nombre }}</h3>
+    <h3>La suma de 2 + 5 = {{ getSuma(2, 5) }}</h3>
+    <br>
+    <!--Para los atributos de HTML es recomendable usar property binding-->
+    <!--funciona igual asi: placeholder="{{textoPlaceHolder}}"-->
+    <input type="text" class="form-control" [placeholder]="textoPlaceHolder" [disabled]="deshabilitado" style="width: 50%;">
+    <br>
+    <img [src]="imgSrc" alt="Img" width="100px" height="400px" style="width: 50%;">
+  </div>
+</div>
