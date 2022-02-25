@@ -19,3 +19,24 @@
   <input type="text" class="form-control" [(ngModel)]="textoTwoWayDataBinding" placeholder="escriba algo aqui..." style="width: 50%;">
   {{textoTwoWayDataBinding}}
 </div>
+<hr>
+<hr>
+<div class="container">
+  <div class="row">
+    <h3>Listado de estudiantes</h3>
+    <table class="table">
+      <thead>
+        <th>Nro</th>
+        <th>Nombre</th>
+        <th>Estado</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let estudiante of listaEstudiantes; let i = index"> <!--i es parametro opcional-->
+          <td>{{i + 1}}</td>
+          <td>{{estudiante.nombre}}</td>
+          <td>{{estudiante.estado}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

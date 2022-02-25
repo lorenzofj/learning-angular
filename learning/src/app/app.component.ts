@@ -12,6 +12,11 @@ export class AppComponent {
   //imgSrc = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhorus.com.uy%2Fimg%2Ftechnologies%2Fangular.png&f=1&nofb=1";
   textoEventBinding = 'prueba event binding';
   textoTwoWayDataBinding = '';
+  listaEstudiantes: any[] = [
+    {nombre: 'Tomas', estado: 'Regular'},
+    {nombre: 'Matias', estado: 'Reprobado'},
+    {nombre: 'Juan', estado: 'Ausente'}
+  ]
 
   constructor(){
     setInterval(() => this.nombre = 'Martín', 3000);
