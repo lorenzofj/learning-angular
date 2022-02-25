@@ -10,7 +10,8 @@ export class AppComponent {
   textoPlaceHolder = 'escriba algo aqui...';
   deshabilitado = true;
   //imgSrc = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhorus.com.uy%2Fimg%2Ftechnologies%2Fangular.png&f=1&nofb=1";
-  textoEventBinding = "prueba event binding";
+  textoEventBinding = 'prueba event binding';
+  textoTwoWayDataBinding = '';
 
   constructor(){
     setInterval(() => this.nombre = 'Martín', 3000);
