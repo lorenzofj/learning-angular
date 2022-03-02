@@ -13,9 +13,10 @@ export class AppComponent {
   textoEventBinding = 'prueba event binding';
   textoTwoWayDataBinding = '';
   listaEstudiantes: any[] = [
-/*     {nombre: 'Tomas', estado: 'Regular'},
+    {nombre: 'Tomas', estado: 'Regular'},
     {nombre: 'Matias', estado: 'Reprobado'},
-    {nombre: 'Juan', estado: 'Ausente'} */
+    {nombre: 'Juan', estado: 'Ausente'},
+    {nombre: 'Francisco', estado: 'Promocionado'}
   ]
 
   constructor(){
