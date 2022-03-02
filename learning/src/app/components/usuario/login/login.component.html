@@ -1,1 +1,39 @@
-<p>login works!</p>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="text-center titulo">Login</h2>
+                    <form [formGroup]="loginForm" (ngSubmit)="login()">
+                        <div class="mb-3">
+                            <input type="text" formControlName="usuario" class="form-control" placeholder="Email">
+                            <!--el signo ? va para decirle al compilador que el valor puede ser NULL, si se sacan da error-->
+                            <span class="text-danger"
+                            *ngIf="loginForm?.get('usuario')?.hasError('required') && loginForm.get('usuario')?.touched">
+                                El email <strong>es obligatorio</strong>
+                            </span>
+                            <span class="text-danger"
+                            *ngIf="loginForm?.get('usuario')?.hasError('email') && loginForm.get('usuario')?.touched">
+                                Email <strong>inválido</strong>
+                            </span>
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" formControlName="password" class="form-control" placeholder="Contraseña">
+                            <span class="text-danger"
+                            *ngIf="loginForm?.get('password')?.hasError('required') && loginForm.get('password')?.touched">
+                                La contraseña <strong>es obligatoria</strong>
+                            </span>
+                        </div>
+                        <button class="btn btn-secondary" routerLink="/">Volver</button>
+                        <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary float-end">Aceptar</button>
+                        <hr>
+                        <div class="text-center">
+                            <a href="#">Registrarse</a><br>
+                            <a href="#">Recuperar contraseña</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
