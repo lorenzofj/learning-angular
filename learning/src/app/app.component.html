@@ -32,10 +32,22 @@
       <th>Estado</th>
     </thead>
     <tbody>
-      <tr *ngFor="let estudiante of listaEstudiantes; let i = index"> <!--i es parametro opcional-->
+      <tr *ngFor="let estudiante of listaEstudiantes; let i = index" [ngSwitch]="estudiante.estado"> <!--i es parametro opcional-->
         <td>{{i + 1}}</td>
         <td>
-          <span [ngClass]="estudiante.estado === 'Reprobado' ? 'badge bg-danger' : 'badge bg-secondary'">{{estudiante.nombre}}</span>
+          <!--[ngClass]="estudiante.estado === 'Reprobado' ? 'badge bg-danger' : 'badge bg-secondary'"-->
+          <span *ngSwitchCase="'Promocionado'" class="badge bg-success">
+            {{estudiante.nombre}}
+          </span>
+          <span *ngSwitchCase="'Regular'" class="badge bg-primary">
+            {{estudiante.nombre}}
+          </span>
+          <span *ngSwitchCase="'Reprobado'" class="badge bg-danger">
+            {{estudiante.nombre}}
+          </span>
+          <span *ngSwitchCase="'Ausente'" class="badge bg-secondary">
+            {{estudiante.nombre}}
+          </span>
         </td>
         <td [ngStyle]="{ 'font-style': estudiante.estado === 'Promocionado' ? 'italic' : 'normal' }">{{estudiante.estado}}</td>
       </tr>
