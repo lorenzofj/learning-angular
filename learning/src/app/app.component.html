@@ -34,7 +34,9 @@
     <tbody>
       <tr *ngFor="let estudiante of listaEstudiantes; let i = index"> <!--i es parametro opcional-->
         <td>{{i + 1}}</td>
-        <td>{{estudiante.nombre}}</td>
+        <td>
+          <span [ngClass]="estudiante.estado === 'Reprobado' ? 'badge bg-danger' : 'badge bg-secondary'">{{estudiante.nombre}}</span>
+        </td>
         <td [ngStyle]="{ 'font-style': estudiante.estado === 'Promocionado' ? 'italic' : 'normal' }">{{estudiante.estado}}</td>
       </tr>
     </tbody>
