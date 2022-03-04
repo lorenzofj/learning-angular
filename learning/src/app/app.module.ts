@@ -1,10 +1,20 @@
+//Modules
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { SharedModule } from './components/shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { environment } from 'src/environments/environment';
+
+//Components
 import { AppComponent } from './app.component';
 import { InicioComponent } from './components/inicio/inicio.component';
-import { SharedModule } from './components/shared/shared.module';
+
+//Firebase
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 @NgModule({
   declarations: [
@@ -14,7 +24,11 @@ import { SharedModule } from './components/shared/shared.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
