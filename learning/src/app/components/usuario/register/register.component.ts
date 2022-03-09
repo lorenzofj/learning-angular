@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { ErrorService } from 'src/app/services/error.service';
 
 @Component({
   selector: 'app-register',
@@ -16,7 +17,8 @@ export class RegisterComponent implements OnInit {
   constructor(private fb: FormBuilder,
               private afAuth: AngularFireAuth,
               private router: Router,
-              private toastr: ToastrService) { 
+              private toastr: ToastrService,
+              private _errorService: ErrorService) { 
     this.registrarForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
@@ -44,12 +46,13 @@ export class RegisterComponent implements OnInit {
         this.toastr.success('El usuario fue registrado con exito', 'Usuario registrado');
         this.router.navigate(['/usuario']);
       }).catch(error => {
+        this.registrarForm.reset();
         this.loading = false;
-        this.toastr.error(this.errorRegistro(error.code), 'Opss ocurrio un error, inténtelo nuevamente');
+        this.toastr.error(this._errorService.errores(error.code), 'Opss ocurrio un error, inténtelo nuevamente');
       });
   }
 
-  errorRegistro(code: string): string{
+  /* errorRegistro(code: string): string{
     switch(code){
       //Email ya registrado
       case 'auth/email-already-in-use':
@@ -65,7 +68,7 @@ export class RegisterComponent implements OnInit {
 
       default:
         return 'Error desconocido';
-    }
-  }
+    } 
+  } */
 
 }
