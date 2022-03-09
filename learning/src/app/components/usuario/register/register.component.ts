@@ -11,6 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class RegisterComponent implements OnInit {
   registrarForm: FormGroup;
+  loading = false;
 
   constructor(private fb: FormBuilder,
               private afAuth: AngularFireAuth,
@@ -36,13 +37,35 @@ export class RegisterComponent implements OnInit {
     const email = this.registrarForm.get('email')?.value;
     const password = this.registrarForm.get('password')?.value;
 
+    this.loading = true;
+
     this.afAuth.createUserWithEmailAndPassword(email, password).then(
       rta => {
         this.toastr.success('El usuario fue registrado con exito', 'Usuario registrado');
         this.router.navigate(['/usuario']);
       }).catch(error => {
-        this.toastr.error('Error', 'Opss ocurrio un error, inténtelo nuevamente');
+        this.loading = false;
+        this.toastr.error(this.errorRegistro(error.code), 'Opss ocurrio un error, inténtelo nuevamente');
       });
+  }
+
+  errorRegistro(code: string): string{
+    switch(code){
+      //Email ya registrado
+      case 'auth/email-already-in-use':
+        return 'El email ya está en uso';
+
+      //Email invalido
+      case 'auth/invalid-email':
+        return 'El email ingresado no es valido';
+
+      //Contraseña debil
+      case 'auth/weak-password':
+        return 'La contraseña es debil';
+
+      default:
+        return 'Error desconocido';
+    }
   }
 
 }
