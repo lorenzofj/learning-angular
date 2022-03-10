@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ErrorService } from 'src/app/services/error.service';
 
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
   constructor(private fb: FormBuilder,
               private afAuth: AngularFireAuth,
               private _errorService: ErrorService,
-              private toastr: ToastrService) { //inyeccion de dependencia en el constructor
+              private toastr: ToastrService,
+              private router: Router) { //inyeccion de dependencia en el constructor
     this.loginForm = this.fb.group({
       usuario: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
@@ -34,6 +36,14 @@ export class LoginComponent implements OnInit {
 
     this.afAuth.signInWithEmailAndPassword(usuario, password).then((response) => {
       this.loading = false;
+      if(!response.user?.emailVerified){
+        //Si el email no está verificado
+        this.router.navigate(['/usuario/verificarEmail']);
+      }
+      else{
+        //Si el email está verificado
+        
+      }
     }, error => {
       this.loading = false;
       this.toastr.error(this._errorService.errores(error.code), 'Error');
