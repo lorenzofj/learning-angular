@@ -17,6 +17,7 @@ export class NavbarComponent implements OnInit {
 
   logOut(){
     this.afAuth.signOut();
+    localStorage.removeItem('user');
     this.router.navigate(['/']);
   }
 
