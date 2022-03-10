@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
       }
       else{
         //Si el email está verificado
-        
+        this.router.navigate(['/dashboard']);
       }
     }, error => {
       this.loading = false;

@@ -37,7 +37,7 @@ export class RecuperarPasswordComponent implements OnInit {
       this.router.navigate(['/usuario']);
     }).catch(error =>{
       this.loading = false;
-      this.toastr.error(this._errorService.errores(error.code));
+      this.toastr.error(this._errorService.errores(error.code), 'Error');
       this.recuperarForm.reset();
     });
   }
