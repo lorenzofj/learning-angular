@@ -7,6 +7,8 @@ import { DashboardComponent } from './dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ListCuestionariosComponent } from './list-cuestionarios/list-cuestionarios.component';
 import { CrearQuizzComponent } from './crear-quizz/crear-quizz.component';
+import { CrearPreguntasComponent } from './crear-preguntas/crear-preguntas.component';
+import { ListPreguntasComponent } from './list-preguntas/list-preguntas.component';
 
 
 
@@ -15,7 +17,9 @@ import { CrearQuizzComponent } from './crear-quizz/crear-quizz.component';
     DashboardComponent,
     NavbarComponent,
     ListCuestionariosComponent,
-    CrearQuizzComponent
+    CrearQuizzComponent,
+    CrearPreguntasComponent,
+    ListPreguntasComponent
   ],
   imports: [
     CommonModule,
