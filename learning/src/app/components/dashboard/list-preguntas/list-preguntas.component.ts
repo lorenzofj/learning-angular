@@ -12,7 +12,6 @@ export class ListPreguntasComponent implements OnInit {
 
   constructor(private _quizzService: QuizzService) { 
     this._quizzService.getPreguntas().subscribe(data => {
-      console.log(data);
       this.listPreguntas.push(data);
     });
   }
