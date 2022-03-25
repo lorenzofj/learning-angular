@@ -42,4 +42,12 @@ export class QuizzService {
       });
     }) as unknown as Observable<any>;
   }
+
+  eliminarCuestionario(idCuestionario: string)/*: Promise<any>*/{
+    //return const cuestionarioRef = collection(this.db, 'cuestionario').doc(idCuestionario).delete();
+  }
+
+  getCuestionario(id: string)/*: Observable<any>*/{
+    //return const cuestionarioRef = collection(this.db, 'cuestionario').doc(id).get();
+  }
 }
