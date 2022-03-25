@@ -15,9 +15,10 @@ import { InicioComponent } from './components/inicio/inicio.component';
 
 //Firebase
 import { AngularFireModule } from '@angular/fire/compat';
+import { DatabaseModule } from '@angular/fire/database'
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { getFirestore, provideFirestore, FirestoreModule } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,8 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
     SharedModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    DatabaseModule,
+    FirestoreModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     ToastrModule.forRoot(),
