@@ -6,29 +6,29 @@
     <div class="d-flex justify-content-center mt-5">
         <div class="card card-titulo">
             <div class="card-body text-center">
-                <h2 class="titulo">{{ cuestionario.titulo | uppercase }}</h2>
-                <h4>{{ cuestionario.descripcion }}</h4>
+                <h2 class="titulo"></h2> <!--{{ cuestionario.titulo | uppercase }}-->
+                <h4></h4> <!--{{ cuestionario.descripcion }}-->
             </div>
         </div>
     </div>
-    <div *ngFor="let pregunta of cuestionario.listPreguntas" class="row mt-5">
+    <div class="row mt-5"> <!--*ngFor="let pregunta of cuestionario.listPreguntas"-->
         <div class="col-lg-8 offset-lg-2">
             <div class="card">
                 <div class="card-body text-center">
-                    <h4 class="titulo">{{ pregunta.titulo }}</h4>
+                    <h4 class="titulo"></h4> <!--{{ pregunta.titulo }}-->
                     <div class="row mt-3">
                         <div class="col-lg-3 offset-lg-3">
-                            <p><span class="badge bg-dark">{{ pregunta.segundos }} segundos</span></p>
+                            <p><span class="badge bg-dark"> segundos</span></p> <!--{{ pregunta.segundos }}-->
                         </div>
                         <div class="col-lg-3">
-                            <p><span class="badge bg-dark">{{ pregunta.puntos }} puntos</span></p>
+                            <p><span class="badge bg-dark"> puntos</span></p> <!--{{ pregunta.puntos }}-->
                         </div>
                     </div>
                     <ul class="list-group">
-                        <li class="list-group-item"
-                        *ngFor="let respuesta of pregunta.listRespuestas"
+                        <li class="list-group-item">
+                        <!--*ngFor="let respuesta of pregunta.listRespuestas"
                         [ngClass]="{ 'classCorrecta': respuesta.esCorrecta === true }">
-                            {{ respuesta.descripcion }}
+                            {{ respuesta.descripcion }}-->
                         </li>
                     </ul>
                 </div>

@@ -1,6 +1,10 @@
-<div class="contenedor">
+<div class="contenedor"> <!--va *ngIf="loading"-->
+    <app-spinner></app-spinner>
+</div>
+
+<div class="contenedor"> <!--va *ngIf="!loading"-->
     <div *ngIf="error" class="alert alert-danger" role="alert">
-        <strong>Por favor ingrese PIN</strong>
+        <strong>{{ errorText }}</strong>
     </div>
     <input [(ngModel)]="pin" type="text" class="form-control input-ingresar mb-3" placeholder="PIN del juego">
     <button (click)="ingresar()" class="btn-ingresar btn-principal">Ingresar</button>
