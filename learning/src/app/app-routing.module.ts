@@ -9,8 +9,7 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent, loadChildren: () => import('./components/dashboard/dashboard.module').then(m => m.DashboardModule)},
   {path: '**', redirectTo: '/', pathMatch: 'full'},
     //Si la ruta especificada no coincide con ninguna se redirecciona al index
-  {path: 'jugar', loadChildren: () => import('./components/jugar/jugar.module').then(m => m.JugarModule)},
-
+  {path: 'jugar', loadChildren: () => import('./components/jugar/jugar.module').then(m => m.JugarModule)}
 ];
 
 @NgModule({

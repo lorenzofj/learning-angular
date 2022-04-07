@@ -10,6 +10,7 @@ export class RespuestaQuizzService {
 
   private db = getFirestore();
   cuestionario!: Cuestionario;
+  nombreParticipante = '';
 
   constructor() { }
 
