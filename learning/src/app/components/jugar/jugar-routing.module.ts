@@ -9,7 +9,7 @@ const routes: Routes = [
   {path: '', component: IngresarNombreComponent},
   {path: 'iniciarContador', component: ContadorInicialComponent},
   {path: 'realizarQuizz', component: RealizarQuizzComponent},
-  {path: 'respuestaUsuario', component: RespuestaUsuarioComponent},
+  {path: 'respuestaUsuario/:id', component: RespuestaUsuarioComponent},
 ];
 
 @NgModule({

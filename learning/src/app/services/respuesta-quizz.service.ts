@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { collection, getFirestore, query, where } from 'firebase/firestore';
+import { addDoc, collection, getFirestore, query, where } from 'firebase/firestore';
 import { Observable } from 'rxjs';
 import { Cuestionario } from '../models/Cuestionario';
 
@@ -18,5 +18,10 @@ export class RespuestaQuizzService {
     const cuesRef = collection(this.db, "cuestionarios");
     const cuestionarioSnap = query(cuesRef, where('codigo', '==', code));
     return;
+  }
+
+  setRespuestaUsuario(respuestaUsuario : any): Promise<any> {
+    const respuestaRef = collection(this.db, "respuestas");
+    return addDoc(respuestaRef, respuestaUsuario);
   }
 }
