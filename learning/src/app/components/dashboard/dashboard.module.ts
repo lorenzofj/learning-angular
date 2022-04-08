@@ -10,6 +10,7 @@ import { CrearQuizzComponent } from './crear-quizz/crear-quizz.component';
 import { CrearPreguntasComponent } from './crear-preguntas/crear-preguntas.component';
 import { ListPreguntasComponent } from './list-preguntas/list-preguntas.component';
 import { VerCuestionarioComponent } from './ver-cuestionario/ver-cuestionario.component';
+import { EstadisticasComponent } from './estadisticas/estadisticas.component';
 
 
 
@@ -21,7 +22,8 @@ import { VerCuestionarioComponent } from './ver-cuestionario/ver-cuestionario.co
     CrearQuizzComponent,
     CrearPreguntasComponent,
     ListPreguntasComponent,
-    VerCuestionarioComponent
+    VerCuestionarioComponent,
+    EstadisticasComponent
   ],
   imports: [
     CommonModule,

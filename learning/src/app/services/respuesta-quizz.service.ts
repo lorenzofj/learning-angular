@@ -30,4 +30,10 @@ export class RespuestaQuizzService {
     const respuestaSnap = query(respuestaRef, where('id', '==', id));
     return respuestaSnap;*/
   }
+
+  getRespuestaByIdCuestionario(id: string)/*: Observable<any>*/ {
+    const respuestaRef = collection(this.db, "respuestas");
+    const respuestaSnap = query(respuestaRef, where('idCuestionario', '==', id));
+    return respuestaSnap;
+  }
 }
