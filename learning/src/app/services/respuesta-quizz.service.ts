@@ -24,4 +24,10 @@ export class RespuestaQuizzService {
     const respuestaRef = collection(this.db, "respuestas");
     return addDoc(respuestaRef, respuestaUsuario);
   }
+
+  getRespuestaUsuario(id : string)/*: Observable<any>*/ {
+    /*const respuestaRef = collection(this.db, "respuestas");
+    const respuestaSnap = query(respuestaRef, where('id', '==', id));
+    return respuestaSnap;*/
+  }
 }
